@@ -1,0 +1,605 @@
+[
+       {
+              "PlayerID": "8581210",
+              "PlayerName": "LightsOut",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#1",
+              "GlobalRank": "Global Rank: 162",
+              "Total PP": "Total PP: 16059.30",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "14139392",
+              "PlayerName": "Bazingasdead",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#2",
+              "GlobalRank": "Global Rank: 1054",
+              "Total PP": "Total PP: 12504.30",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "8584061",
+              "PlayerName": "Pi-",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#3",
+              "GlobalRank": "Global Rank: 1437",
+              "Total PP": "Total PP: 6902.92",
+              "Gamemode": "fruits"
+       },
+       {
+              "PlayerID": "16036374",
+              "PlayerName": "WhiteGyatt",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#4",
+              "GlobalRank": "Global Rank: 1894",
+              "Total PP": "Total PP: 11427.40",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "18571230",
+              "PlayerName": "Kai Cenat",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#5",
+              "GlobalRank": "Global Rank: 2123",
+              "Total PP": "Total PP: 11218.90",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "5701369",
+              "PlayerName": "diciestaking",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#6",
+              "GlobalRank": "Global Rank: 3672",
+              "Total PP": "Total PP: 10253.60",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "13915613",
+              "PlayerName": "Aezhin",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#7",
+              "GlobalRank": "Global Rank: 3841",
+              "Total PP": "Total PP: 10186.60",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "13182910",
+              "PlayerName": "XD piranha",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#8",
+              "GlobalRank": "Global Rank: 3892",
+              "Total PP": "Total PP: 10165.20",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "14404978",
+              "PlayerName": "Naiad",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#9",
+              "GlobalRank": "Global Rank: 4339",
+              "Total PP": "Total PP: 9986.74",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "21180640",
+              "PlayerName": "Hayakou",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#10",
+              "GlobalRank": "Global Rank: 4569",
+              "Total PP": "Total PP: 9883.41",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "15740032",
+              "PlayerName": "Gaping",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#11",
+              "GlobalRank": "Global Rank: 6318",
+              "Total PP": "Total PP: 8275.28",
+              "Gamemode": "mania"
+       },
+       {
+              "PlayerID": "14443835",
+              "PlayerName": "[Cat Girl]",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#12",
+              "GlobalRank": "Global Rank: 8076",
+              "Total PP": "Total PP: 8893.58",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "23059290",
+              "PlayerName": "Christojesus07",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#13",
+              "GlobalRank": "Global Rank: 8795",
+              "Total PP": "Total PP: 7516.02",
+              "Gamemode": "mania"
+       },
+       {
+              "PlayerID": "15151896",
+              "PlayerName": "Omni-boi",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#14",
+              "GlobalRank": "Global Rank: 9458",
+              "Total PP": "Total PP: 8632.00",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "13597647",
+              "PlayerName": "Referee",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#15",
+              "GlobalRank": "Global Rank: 9798",
+              "Total PP": "Total PP: 8575.56",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "20988852",
+              "PlayerName": "Sunsivk",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#16",
+              "GlobalRank": "Global Rank: 10319",
+              "Total PP": "Total PP: 8498.83",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "19803457",
+              "PlayerName": "Hygeio",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#17",
+              "GlobalRank": "Global Rank: 10536",
+              "Total PP": "Total PP: 8465.57",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "10407363",
+              "PlayerName": "Speedplayer178",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#18",
+              "GlobalRank": "Global Rank: 10641",
+              "Total PP": "Total PP: 8450.04",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "4589183",
+              "PlayerName": "AndreDubs",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#19",
+              "GlobalRank": "Global Rank: 10986",
+              "Total PP": "Total PP: 8400.34",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "13541126",
+              "PlayerName": "President",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#20",
+              "GlobalRank": "Global Rank: 12074",
+              "Total PP": "Total PP: 8240.43",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "9501038",
+              "PlayerName": "Phaisf",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#21",
+              "GlobalRank": "Global Rank: 13924",
+              "Total PP": "Total PP: 8008.86",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "34116764",
+              "PlayerName": "DDUD",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#22",
+              "GlobalRank": "Global Rank: 15134",
+              "Total PP": "Total PP: 6220.38",
+              "Gamemode": "mania"
+       },
+       {
+              "PlayerID": "7614814",
+              "PlayerName": "_Owen",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#23",
+              "GlobalRank": "Global Rank: 19147",
+              "Total PP": "Total PP: 7466.13",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "13958613",
+              "PlayerName": "shimlak",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#24",
+              "GlobalRank": "Global Rank: 19471",
+              "Total PP": "Total PP: 7438.67",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "14729587",
+              "PlayerName": "Polaritus",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#25",
+              "GlobalRank": "Global Rank: 19737",
+              "Total PP": "Total PP: 7419.65",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "19300138",
+              "PlayerName": "Spectvist",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#26",
+              "GlobalRank": "Global Rank: 20598",
+              "Total PP": "Total PP: 7348.90",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "12145833",
+              "PlayerName": "Ennulic",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#27",
+              "GlobalRank": "Global Rank: 21223",
+              "Total PP": "Total PP: 2161.79",
+              "Gamemode": "taiko"
+       },
+       {
+              "PlayerID": "17710097",
+              "PlayerName": "Dracium",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#28",
+              "GlobalRank": "Global Rank: 23445",
+              "Total PP": "Total PP: 7139.74",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "11269261",
+              "PlayerName": "Noodled",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#29",
+              "GlobalRank": "Global Rank: 25780",
+              "Total PP": "Total PP: 6981.77",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "4941414",
+              "PlayerName": "Emanz",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#30",
+              "GlobalRank": "Global Rank: 25964",
+              "Total PP": "Total PP: 6971.08",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "12815067",
+              "PlayerName": "Zane",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#31",
+              "GlobalRank": "Global Rank: 29072",
+              "Total PP": "Total PP: 6785.80",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "8910253",
+              "PlayerName": "goint",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#32",
+              "GlobalRank": "Global Rank: 29098",
+              "Total PP": "Total PP: 6784.59",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "3193403",
+              "PlayerName": "Steeeb",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#33",
+              "GlobalRank": "Global Rank: 29399",
+              "Total PP": "Total PP: 6767.24",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "15476086",
+              "PlayerName": "Ky-S",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#34",
+              "GlobalRank": "Global Rank: 29451",
+              "Total PP": "Total PP: 6764.51",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "5674993",
+              "PlayerName": "bhir",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#35",
+              "GlobalRank": "Global Rank: 32442",
+              "Total PP": "Total PP: 6607.55",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "27635636",
+              "PlayerName": "-Pixie",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#36",
+              "GlobalRank": "Global Rank: 32741",
+              "Total PP": "Total PP: 6592.99",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "24106842",
+              "PlayerName": "B4ppers",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#37",
+              "GlobalRank": "Global Rank: 34020",
+              "Total PP": "Total PP: 6529.21",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "23643216",
+              "PlayerName": "Vipero",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#38",
+              "GlobalRank": "Global Rank: 34833",
+              "Total PP": "Total PP: 6490.59",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "9206422",
+              "PlayerName": "Engel",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#39",
+              "GlobalRank": "Global Rank: 49430",
+              "Total PP": "Total PP: 5918.24",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "9329695",
+              "PlayerName": "Simelc",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#40",
+              "GlobalRank": "Global Rank: 51779",
+              "Total PP": "Total PP: 5840.29",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "14629260",
+              "PlayerName": "Jo3",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#41",
+              "GlobalRank": "Global Rank: 51804",
+              "Total PP": "Total PP: 5839.39",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "17697010",
+              "PlayerName": "Wisdom Weir",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#42",
+              "GlobalRank": "Global Rank: 52345",
+              "Total PP": "Total PP: 5823.16",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "21283922",
+              "PlayerName": "simplyworse",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#43",
+              "GlobalRank": "Global Rank: 62266",
+              "Total PP": "Total PP: 5536.33",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "12612528",
+              "PlayerName": "gxiacu",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#44",
+              "GlobalRank": "Global Rank: 65492",
+              "Total PP": "Total PP: 5454.22",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "14063549",
+              "PlayerName": "MyLonelyAlpaca",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#45",
+              "GlobalRank": "Global Rank: 66395",
+              "Total PP": "Total PP: 5432.58",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "27830128",
+              "PlayerName": "SankerOklahoma",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#46",
+              "GlobalRank": "Global Rank: 71643",
+              "Total PP": "Total PP: 5308.85",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "7615270",
+              "PlayerName": "kaioo",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#47",
+              "GlobalRank": "Global Rank: 74717",
+              "Total PP": "Total PP: 5240.20",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "30001140",
+              "PlayerName": "siblinghood",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#48",
+              "GlobalRank": "Global Rank: 86535",
+              "Total PP": "Total PP: 4993.97",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "17607455",
+              "PlayerName": "MucusLucas",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#49",
+              "GlobalRank": "Global Rank: 86683",
+              "Total PP": "Total PP: 4990.61",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "7307496",
+              "PlayerName": "DaGuc",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#50",
+              "GlobalRank": "Global Rank: 87274",
+              "Total PP": "Total PP: 4979.84",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "15375155",
+              "PlayerName": "Miu Amano",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#51",
+              "GlobalRank": "Global Rank: 95406",
+              "Total PP": "Total PP: 4833.13",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "9968667",
+              "PlayerName": "iDubzyyy",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#52",
+              "GlobalRank": "Global Rank: 110054",
+              "Total PP": "Total PP: 4590.36",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "11541333",
+              "PlayerName": "Gawken",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#53",
+              "GlobalRank": "Global Rank: 117200",
+              "Total PP": "Total PP: 4479.69",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "15071212",
+              "PlayerName": "Zambi",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#54",
+              "GlobalRank": "Global Rank: 121926",
+              "Total PP": "Total PP: 4411.51",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "9641311",
+              "PlayerName": "Ying",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#55",
+              "GlobalRank": "Global Rank: 127643",
+              "Total PP": "Total PP: 4327.90",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "13963333",
+              "PlayerName": "Darkee",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#56",
+              "GlobalRank": "Global Rank: 136646",
+              "Total PP": "Total PP: 4204.33",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "12037879",
+              "PlayerName": "Bahbo",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#57",
+              "GlobalRank": "Global Rank: 167827",
+              "Total PP": "Total PP: 3816.78",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "13741540",
+              "PlayerName": "Pines",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#58",
+              "GlobalRank": "Global Rank: 174632",
+              "Total PP": "Total PP: 3741.59",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "18129001",
+              "PlayerName": "OreKk",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#59",
+              "GlobalRank": "Global Rank: 201228",
+              "Total PP": "Total PP: 3479.78",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "14767437",
+              "PlayerName": "tacotruck",
+              "PlayerState": "Oklahoma",
+              "StateRank": "#60",
+              "GlobalRank": "Global Rank: 236524",
+              "Total PP": "Total PP: 3177.94",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "11708806",
+              "PlayerName": "Vashh",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#61",
+              "GlobalRank": "Global Rank: 241971",
+              "Total PP": "Total PP: 3135.97",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "34449273",
+              "PlayerName": "Butterslorsh",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#62",
+              "GlobalRank": "Global Rank: 278020",
+              "Total PP": "Total PP: 2878.83",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "14819994",
+              "PlayerName": "Masew",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#63",
+              "GlobalRank": "Global Rank: 300919",
+              "Total PP": "Total PP: 2735.53",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "21813677",
+              "PlayerName": "b-3n",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#64",
+              "GlobalRank": "Global Rank: 346713",
+              "Total PP": "Total PP: 2482.37",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "20137255",
+              "PlayerName": "Astro OG",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#65",
+              "GlobalRank": "Global Rank: 382451",
+              "Total PP": "Total PP: 2310.03",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "26965574",
+              "PlayerName": "Kuai",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#66",
+              "GlobalRank": "Global Rank: 418657",
+              "Total PP": "Total PP: 2148.59",
+              "Gamemode": "osu"
+       },
+       {
+              "PlayerID": "30672569",
+              "PlayerName": "marinfan1",
+              "PlayerState": "Oklahoma ",
+              "StateRank": "#67",
+              "GlobalRank": "Global Rank: 478118",
+              "Total PP": "Total PP: 1912.73",
+              "Gamemode": "osu"
+       }
+]
