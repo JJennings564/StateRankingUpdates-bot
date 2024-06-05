@@ -86,12 +86,12 @@ def data_has_changed(new_data, old_data):
 
 async def notify_rank_changes(channel, new_data, old_data):
     old_rankings = {player['PlayerID']: player['StateRank'] for player in old_data}
-    new_rankings = {player['PlayerID']: player['StateRank'] for player in new_data}
-
+    old_Gamemode = {player['PlayerID']: player['Gamemode'] for player in old_data}
+    new_Gamemode = {player['PlayerID']: player['Gamemode'] for player in new_data}
     for new_player in new_data:
         player_id = new_player['PlayerID']
         new_rank = int(new_player['StateRank'].replace('#', ''))
-        if player_id in old_rankings and new_rank < int(old_rankings[player_id].replace('#', '')) and new_player['Gamemode'] == old_player['Gamemode']:
+        if player_id in old_rankings and new_rank < int(old_rankings[player_id].replace('#', '')) and new_Gamemode == old_Gamemode:
             print(f"Rank change detected for player {new_player['PlayerName']}!")
             beaten_player = None
             beater_player = None
@@ -110,7 +110,7 @@ async def notify_rank_changes(channel, new_data, old_data):
                     beater_player = old_player
                     break
 
-            if beaten_player and beater_player:
+            if beaten_player and beater_player and beaten_player['Gamemode'] == beater_player['Gamemode']:
                 embed = discord.Embed(
                     title="Leaderboard Update Detected!",
                     color=discord.Color.green()
@@ -123,8 +123,8 @@ async def notify_rank_changes(channel, new_data, old_data):
 
 @tasks.loop(minutes=20)
 async def check_data():
-    new_data = fetch_data()
     old_data = load_json(json_file)
+    new_data = fetch_data()
     
     if data_has_changed(new_data, old_data):
         save_json(json_file, new_data)
