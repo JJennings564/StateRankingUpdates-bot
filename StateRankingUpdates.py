@@ -2,18 +2,16 @@ import os
 import discord
 from discord.ext import commands, tasks
 import requests
-from bs4 import BeautifulSoup
 import json
-from typing import Final
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD_ID = 
-CHANNEL_ID = 
-state = ''
-json_file = f"{state}Data.json"
+GUILD_ID = int(os.getenv('DISCORD_GUILD_ID'))
+CHANNEL_ID = int(os.getenv('DISCORD_CHANNEL_ID'))
+state = 'Oklahoma'
+json_file = f"{state}Data.json" 
 
 # Discord bot setup
 intents = discord.Intents.default()
@@ -28,53 +26,56 @@ async def on_ready():
         print(f"Synced {len(synced)} command(s)")
     except Exception as e:
         print(f"Error syncing commands: {e}")
-    check_data.start()  # Start the loop to check data every hour
+    check_data.start()  # Start the loop to check data every 20 minutes
 
-def fetch_data():
-    print("Fetching data...")
-    r = requests.get(f'https://states.osutools.com/states/{state}') # Start getting the data from the website
-    soup = BeautifulSoup(r.content, 'html.parser')
-    s = soup.find('div', class_='players-container')
-
-    playerState = s.find_all_next('h6') # Get specific text for certain statistics
-    stateRank = s.find_all_next('h4')
-    playerName = s.find_all_next('h2')
-    playerID = s.find_all_next('a')
-    gameMode = s.find_all_next('h5')
+async def fetch_data():
+    print("Fetching data from osu! World API...")
+    base_url = "https://osuworld.octo.moe/api/US/US-OK/top/osu?page={}"
+    page = 1
     data_list = []
-    index = 0
-    gmIndex=0
-    for i in range(0, len(stateRank), 5):
-        dataString = [
-            f'{playerName[index]}',
-            f'{stateRank[i]}',
-            f'{playerState[index]}',
-            f'{stateRank[i+2]}',
-            f'{stateRank[i+1]}',
-            f'{playerID[index]}',
-            f'{gameMode[gmIndex]}'
-        ]
-        # Add formatted information into the JSON file
-        playerData = {
-            "PlayerID": dataString[5].replace('<a href="https://osu.ppy.sh/users/', '').replace('" target="_blank"><h2>', '').replace(dataString[0].replace('<h2>', '').replace('</h2>', ''), '').replace('</h2></a>', ''),
-            "PlayerName": dataString[0].replace('<h2>', '').replace('</h2>', ''),
-            "PlayerState": dataString[2].replace('<h6>', '').replace('</h6>', '').replace('\u2713', ''),
-            "StateRank": dataString[1].replace('<h4>', '').replace('</h4>', ''),
-            "GlobalRank": dataString[3].replace('<h4>', '').replace('</h4>', ''),
-            "Total PP": dataString[4].replace('<h4>', '').replace('</h4>', ''),
-            "Gamemode": dataString[6].replace('<h5>Mode: ','').replace('</h5>', '')
-        }
-        data_list.append(playerData)
-        index += 1
-        gmIndex += 3
 
-    print("Data fetched successfully.")
+    while True:
+        url = base_url.format(page)
+        response = requests.get(url)
+        if response.status_code != 200:
+            break
+        data = response.json()
+        players = data.get("top", [])
+        if not players:
+            break  # No more data
+
+        for player in players:
+            playerData = {
+                "PlayerID": str(player.get("id", "")),
+                "PlayerName": player.get("username", ""),
+                "PlayerState": "Oklahoma",
+                "StateRank": "",
+                "GlobalRank": str(player.get("rank", "")),
+                "Total PP": str(player.get("pp", "")),
+                "Gamemode": player.get("mode", "osu")
+            }
+            data_list.append(playerData)
+
+        page += 1
+        if page > data.get("pages", 1):
+            break
+
+    # Sort and assign StateRank as before
+    data_list = [p for p in data_list if p["GlobalRank"].isdigit()]
+    data_list.sort(key=lambda x: int(x["GlobalRank"]))
+    for idx, player in enumerate(data_list, start=1):
+        player["StateRank"] = f"#{idx}"
+
+    print(f"Fetched {len(data_list)} players.")
     return data_list
 
 def load_json(filepath):
     if os.path.exists(filepath):
         with open(filepath, 'r') as file:
-            return json.load(file)
+            content = file.read().strip()
+            if not content:
+                return []
+            return json.loads(content)
     return []
 
 def save_json(filepath, data):
@@ -93,38 +94,97 @@ async def notify_rank_changes(channel, new_data, old_data):
         new_rank = int(new_player['StateRank'].replace('#', ''))
         if player_id in old_rankings and new_rank < int(old_rankings[player_id].replace('#', '')) and new_Gamemode == old_Gamemode:
             print(f"Rank change detected for player {new_player['PlayerName']}!")
-            beaten_player = None
-            beater_player = None
+            beaten_players = []
+            beater_player = new_player
 
-            # Finding the player who was beaten
+        
+            # Finding the players who were beaten
             for old_player in old_data:
                 old_rank = int(old_player['StateRank'].replace('#', ''))
-                if old_rank == new_rank + 1:
-                    beaten_player = old_player
-                    break
+                if old_rank == new_rank or old_rank == new_rank + 1 and old_player['PlayerName'] != new_player['PlayerName']:
+                    beaten_players = [old_player] + beaten_players
 
-            # Finding the player who moved up in rank
-            for old_player in old_data:
-                old_rank = int(old_player['StateRank'].replace('#', ''))
-                if old_rank == new_rank and old_player['PlayerName'] != new_player['PlayerName']:
-                    beater_player = old_player
-                    break
+            if beaten_players:
+                for beaten_player in beaten_players:
+                    if beaten_player['Gamemode'] == beater_player['Gamemode']:
+                        beater_link = f"[{beater_player['PlayerName']}](https://osu.ppy.sh/users/{beater_player['PlayerID']})"
+                        beaten_link = f"[{beaten_player['PlayerName']}](https://osu.ppy.sh/users/{beaten_player['PlayerID']})"
+                        embed = discord.Embed(
+                            title="🏆 Leaderboard Update Detected!",
+                            description=(f"{beater_link} is one step closer to #1 in Oklahoma!"),
+                            color=discord.Color.green()
+                        )
+                        embed.add_field(name="Player", value=beater_link, inline=True)
+                        embed.add_field(name="New State Rank", value=beaten_player['StateRank'], inline=True)
+                        embed.add_field(name="Passed Player", value=beaten_link, inline=False)
+                        embed.set_footer(text="Rank updates")
+                        embed.set_thumbnail(url= f"https://a.ppy.sh/{beater_player['PlayerID']}")
+                        await channel.send(embed=embed)
 
-            if beaten_player and beater_player and beaten_player['Gamemode'] == beater_player['Gamemode']:
-                embed = discord.Embed(
-                    title="Leaderboard Update Detected!",
-                    color=discord.Color.green()
-                )
-                embed.add_field(name="Player", value=beaten_player['PlayerName'], inline=True)
-                embed.add_field(name="New State Rank", value=beater_player['StateRank'], inline=True)
-                embed.add_field(name="Passed Player", value=beater_player['PlayerName'], inline=False)
-                embed.set_footer(text="Rank updates")
-                await channel.send(embed=embed)
+@client.tree.command(name="nextpass", description="Shows who the specified user is about to pass.")
+async def Next_Pass(interaction: discord.Interaction, username: str):
+    data = load_json(json_file)
+    user = next((p for p in data if p["PlayerName"].lower() == username.lower()), None)
+    if not user:
+        await interaction.response.send_message(f"User '{username}' not found.", ephemeral=True)
+        return
+    user_rank = int(user["StateRank"].replace("#", ""))
+    next_user = next((p for p in data if int(p["StateRank"].replace("#", "")) == user_rank - 1), None)
+    if next_user:
+        user_link = f"[{user['PlayerName']}](https://osu.ppy.sh/users/{user['PlayerID']})"
+        next_link = f"[{next_user['PlayerName']}](https://osu.ppy.sh/users/{next_user['PlayerID']})"
+        rank_diff = int(next_user["GlobalRank"]) - int(user["GlobalRank"])
+        pp_diff = float(next_user["Total PP"]) - float(user["Total PP"])
+        embed = discord.Embed(
+            title="🚀 Next Pass Prediction",
+            description=f"{user_link} is closest to passing {next_link}!\n"
+                        f"{next_user['PlayerName']} is {abs(rank_diff)} ranks and {abs(pp_diff):.2f}pp ahead. Better get to farming O.O",
+            color=discord.Color.blue()
+        )
+        embed.add_field(name=f"{user['PlayerName']}'s State Rank", value=user["StateRank"], inline=True)
+        embed.add_field(name=f"{next_user['PlayerName']}'s State Rank", value=next_user["StateRank"], inline=True)
+        embed.add_field(name=f"{next_user['PlayerName']}'s PP", value=next_user["Total PP"], inline=True)
+        embed.add_field(name="PP Difference", value=f"{abs(pp_diff):.2f}pp", inline=True)
+        embed.set_thumbnail(url=f"https://a.ppy.sh/{user['PlayerID']}")
+        embed.set_footer(text="osu! Oklahoma Leaderboard")
+        await interaction.response.send_message(embed=embed)
+    else:
+        await interaction.response.send_message(f"{user['PlayerName']} is already #1!")
+
+@client.tree.command(name="closestthreat", description="Shows who is closest to passing the specified user.")
+async def Closest_Threat(interaction: discord.Interaction, username: str):
+    data = load_json(json_file)
+    user = next((p for p in data if p["PlayerName"].lower() == username.lower()), None)
+    if not user:
+        await interaction.response.send_message(f"User '{username}' not found.", ephemeral=True)
+        return
+    user_rank = int(user["StateRank"].replace("#", ""))
+    threat_user = next((p for p in data if int(p["StateRank"].replace("#", "")) == user_rank + 1), None)
+    if threat_user:
+        user_link = f"[{user['PlayerName']}](https://osu.ppy.sh/users/{user['PlayerID']})"
+        threat_link = f"[{threat_user['PlayerName']}](https://osu.ppy.sh/users/{threat_user['PlayerID']})"
+        rank_diff = int(user["GlobalRank"]) - int(threat_user["GlobalRank"])
+        pp_diff = float(user["Total PP"]) - float(threat_user["Total PP"])
+        embed = discord.Embed(
+            title="⚠️ Closest Threat",
+            description=f"{threat_link} is closest to passing {user_link}!\n"
+                        f"{threat_user['PlayerName']} is {abs(rank_diff)} ranks and {abs(pp_diff):.2f}pp behind you. Keep farming to stay ahead!",
+            color=discord.Color.red()
+        )
+        embed.add_field(name=f"{user['PlayerName']}'s State Rank", value=user["StateRank"], inline=True)
+        embed.add_field(name=f"{threat_user['PlayerName']}'s State Rank", value=threat_user["StateRank"], inline=True)
+        embed.add_field(name=f"{threat_user['PlayerName']}'s PP", value=threat_user["Total PP"], inline=True)
+        embed.add_field(name="PP Difference", value=f"{abs(pp_diff):.2f}pp", inline=True)
+        embed.set_thumbnail(url=f"https://a.ppy.sh/{threat_user['PlayerID']}")
+        embed.set_footer(text="osu! Oklahoma Leaderboard")
+        await interaction.response.send_message(embed=embed)
+    else:
+        await interaction.response.send_message(f"{user['PlayerName']} is at the bottom of the leaderboard!", ephemeral=True)
 
 @tasks.loop(minutes=20)
 async def check_data():
     old_data = load_json(json_file)
-    new_data = fetch_data()
+    new_data = await fetch_data()
     
     if data_has_changed(new_data, old_data):
         save_json(json_file, new_data)
